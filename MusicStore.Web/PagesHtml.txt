@@ -1,0 +1,76 @@
+﻿
+sweetalert2.github.io   => for nice alert
+toastr => for notification
+Datatables.net
+
+https://www.youtube.com/watch?v=C5cnZ-gZy2I
+
+
+ <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Genres[0].Name)
+                </th>
+
+
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Genres)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+
+                    <td>
+                        <form asp-page-handler="view" asp-page="./Edit" method="post">
+                            <button class="btn btn-primary">Edit</button>
+                            <input type="hidden" name="id" value="@item.Id" />
+                        </form>|
+                        
+                        <a asp-page="./Details">Details</a> |
+                        <a asp-page="./Delete">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+
+
+
+
+  <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Genres[0].Name)
+                    </th>
+
+
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Genres)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
