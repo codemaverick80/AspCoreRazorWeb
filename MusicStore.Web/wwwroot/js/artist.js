@@ -66,6 +66,7 @@ function GetArtistsUsingFethApiAsync() {
 function generateDataTable(data) {
     const datatable = document.querySelector('#dataTable');
 
+
     let table = `
         <table class="table">
         <thead>
@@ -105,6 +106,10 @@ function showError(err) {
                 </div>
           `;
 }
+
+
+
+
 
 
 

@@ -35,7 +35,7 @@ class storeFetchAsync {
 
         // await response of fetch call
 
-        let response = await fetch(url);
+        let response = await fetch(url);       
 
         let data= this.handleResponse(response);       
      

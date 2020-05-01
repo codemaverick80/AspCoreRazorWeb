@@ -25,7 +25,7 @@ class storeFetchApi {
      */
 
    handleResponse(response) {
-        if (!response.ok)throw Error(response.statusText + ' - ' + response.status);
+       if (!response.ok) throw Error(response.statusText + ' - ' + response.status);     
         return response.json();
     }
 
@@ -74,9 +74,16 @@ class storeFetchApi {
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(data),
             })
-                .then(res => res.json())
-                .then(data => resolve(data))
-                .catch(err => reject(err));
+                .then(function (res) {
+                    console.log(typeof res);
+                    return res.json() 
+                })
+                .then(function (data) {
+                    return resolve(data);
+                })
+                .catch(function (err) {
+                    return reject(err);
+                });
         });
     }
 

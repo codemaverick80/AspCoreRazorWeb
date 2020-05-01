@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using MusicStore.Database.Entities;
 using MusicStore.Services.Contracts;
 using MusicStore.Services.Repositories;
+using MusicStore.Web.Extensions;
 
 namespace MusicStore.Web
 {
@@ -65,6 +66,12 @@ namespace MusicStore.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //// Exception Middleware Extension
+            //app.ConfigureExceptionHandler();
+
+            //// Custom Exception Middleware
+            app.ConfigureCustomExceptionMiddleware();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

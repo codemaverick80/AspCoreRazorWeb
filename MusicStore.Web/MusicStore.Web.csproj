@@ -37,5 +37,7 @@
     <Folder Include="MappingProfiles\" />
     <Folder Include="Pages\Artist\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="CustomMiddlewares\" />
   </ItemGroup>
 </Project>
